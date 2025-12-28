@@ -1,7 +1,7 @@
 import ProjectCard from './ProjectCard'
 
 import bookifyImg from '../assets/bookify/Home.jpg'
-import finwiseImg from '../assets/finwise/Home.jpg'
+import finwiseImg from '../assets/FinWise/Home.jpg'
 import sodikImg from '../assets/sodik/Home.png'
 import bomberquest from '../assets/BomberQuest/BomberQuest.png'
 
