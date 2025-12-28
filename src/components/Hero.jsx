@@ -1,7 +1,7 @@
 import profile1 from '../assets/profile_1.png'
 import profile2 from '../assets/profile_2.png'
 import rizz from '../assets/rizz.gif'
-import cvFile from '../assets/CV.pdf'
+import cvFile from '../assets/CV_Sidqi.pdf'
 
 function Hero() {
   return (
