@@ -25,7 +25,7 @@ html, body {
 .navbar {
   width: 100%;
   padding: 18px 40px;
-  background: #fff;
+  background: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,10 +49,6 @@ html, body {
   gap: 28px;
   margin: 0;
   padding: 0;
-  overflow-x: auto;
-  white-space: nowrap;
-  max-width: 100%;
-  scrollbar-width: none;
 }
 
 .nav-menu a {
@@ -60,18 +56,25 @@ html, body {
   color: #333;
   font-weight: 500;
   position: relative;
-  transition: color 0.3s ease;
+  padding: 6px 0;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
+.nav-menu a:hover {
+  transform: translateY(-2px);
+  color: #3f6ad8;
+}
+
+/* UNDERLINE */
 .nav-menu a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
-  width: 0;
+  width: 0%;
   height: 2px;
-  background: #3f6ad8;
-  transition: 0.3s;
+  background-color: #000000; /* hitam - light */
+  transition: width 0.3s ease;
 }
 
 .nav-menu a:hover::after {
@@ -126,6 +129,16 @@ html, body {
   border-radius: 6px;
   text-decoration: none;
   margin-right: 12px;
+  display: inline-block;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(63, 106, 216, 0.4);
+  background: #345bd1;
 }
 
 .btn-outline {
@@ -134,6 +147,19 @@ html, body {
   padding: 10px 20px;
   border-radius: 6px;
   text-decoration: none;
+  display: inline-block;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.btn-outline:hover {
+  background: #3f6ad8;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(63, 106, 216, 0.35);
 }
 
 /* =========================
@@ -231,6 +257,14 @@ html, body {
   color: #777;
 }
 
+.project-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
 /* =========================
    FOOTER
 ========================= */
@@ -300,9 +334,11 @@ body.dark {
   color: #e5e7eb;
 }
 
-/* NAVBAR */
+/* =========================
+   DARK MODE NAVBAR
+========================= */
 body.dark .navbar {
-  background: #111;
+  background: #111111;
 }
 
 body.dark .nav-logo {
@@ -310,12 +346,18 @@ body.dark .nav-logo {
 }
 
 body.dark .nav-menu a {
-  color: #fff;
+  color: #e5e7eb;
 }
 
-body.dark .nav-menu a::after {
-  background: #fff;
+body.dark .nav-menu a:hover {
+  color: #ffffff;
 }
+
+/* OVERRIDE UNDERLINE COLOR */
+body.dark .nav-menu a::after {
+  background-color: #ffffff;
+}
+
 
 /* HERO */
 body.dark .hero h2 {
@@ -381,3 +423,4 @@ body.dark .dark-icon {
   border-radius: 50%;
   padding: 4px;
 }
+

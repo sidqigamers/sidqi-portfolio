@@ -22,18 +22,18 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
+
           <a href="#projects" className="btn-primary">
             View Projects
           </a>
-
-          <a
-            href={cvFile}
+          <a href={cvFile}
             className="btn-outline"
             download
             target="_blank"
             rel="noopener noreferrer">
             Download CV
           </a>
+          
         </div>
       </div>
 
