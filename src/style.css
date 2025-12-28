@@ -281,7 +281,6 @@ footer {
     display: block;
     width: 100%;
     padding: 8px 0;
-    font-size: 0.9rem; /*Before (blank)*/
   }
 
   .hero {
@@ -292,11 +291,11 @@ footer {
   }
 
   .hero h1 {
-    font-size: 1.8rem; /*before : 2.2rem; */
+    font-size: 2.2rem;
   }
 
   .hero h2 {
-    font-size: 1.2rem; /*before : 2.2rem; */
+    font-size: 1.4rem;
   }
 
   .hero p {
