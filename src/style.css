@@ -11,8 +11,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: 100%;
-  overflow-x: hidden; /* FIX UTAMA */
+  overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: 'Segoe UI', Arial, sans-serif;
   background-color: #f9f9f9;
@@ -24,7 +23,6 @@ html, body {
    ========================= */
 .navbar {
   width: 100%;
-  max-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,7 +32,6 @@ html, body {
   top: 0;
   z-index: 1000;
   box-shadow: 0 5px 10px rgba(0,0,0,0.16);
-  overflow-x: hidden;
 }
 
 .nav-logo {
@@ -57,9 +54,9 @@ html, body {
   color: #333;
   font-weight: 500;
   position: relative;
+  white-space: nowrap;
 }
 
-/* Hover underline */
 .nav-menu li a::after {
   content: '';
   position: absolute;
@@ -76,28 +73,26 @@ html, body {
 }
 
 /* =========================
-   HERO SECTION
+   HERO
    ========================= */
 .hero {
   width: 100%;
-  max-width: 100%;
   min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  padding: 0 40px;
-  overflow-x: hidden;
+  padding: 40px;
 }
 
 .hero-text {
   flex: 1;
-  min-width: 0; /* FIX overflow flex */
+  min-width: 0;
 }
 
 .hero h1 {
   font-size: 3rem;
-  margin-top: 0;
+  margin: 0;
 }
 
 .hero h1 span {
@@ -120,6 +115,11 @@ html, body {
   margin-top: 30px;
 }
 
+.btn-primary,
+.btn-outline {
+  display: inline-block;
+}
+
 .btn-primary {
   background: #3f6ad8;
   color: white;
@@ -127,7 +127,6 @@ html, body {
   border-radius: 6px;
   text-decoration: none;
   margin-right: 15px;
-  display: inline-block;
 }
 
 .btn-outline {
@@ -136,7 +135,6 @@ html, body {
   border-radius: 6px;
   color: #3f6ad8;
   text-decoration: none;
-  display: inline-block;
 }
 
 /* IMAGE */
@@ -144,13 +142,11 @@ html, body {
   flex: 1;
   display: flex;
   justify-content: center;
-  min-width: 0;
 }
 
 .hero-image img {
-  width: 300px;
-  height: 300px;
-  max-width: 100%;
+  width: 320px;
+  height: 320px;
   object-fit: cover;
   border-radius: 50%;
   border: 6px solid #eef2ff;
@@ -160,12 +156,9 @@ html, body {
    ABOUT
    ========================= */
 .about {
-  width: 100%;
-  max-width: 100%;
   padding: 80px 40px;
   background: white;
   box-shadow: 0 5px 35px rgba(0,0,0,0.20);
-  overflow-x: hidden;
 }
 
 .skills {
@@ -187,10 +180,7 @@ html, body {
    PROJECTS
    ========================= */
 #projects {
-  width: 100%;
-  max-width: 100%;
   padding: 80px 40px;
-  overflow-x: hidden;
 }
 
 .project-grid {
@@ -205,95 +195,51 @@ html, body {
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0,0,0,0.20);
-  max-width: 100%;
 }
 
 .project-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.08);
-}
-
-.project-card h3,
-.project-card p,
-.project-card small {
-  padding: 0 20px;
-}
-
-.project-card h3 {
-  margin-top: 16px;
-}
-
-.project-card p {
-  margin: 10px 0;
-  color: #555;
-}
-
-.project-card small {
-  display: block;
-  padding-bottom: 20px;
-  color: #777;
 }
 
 /* =========================
    FOOTER
    ========================= */
 footer {
-  width: 100%;
-  max-width: 100%;
   text-align: center;
   padding: 30px;
   background: #111;
   color: white;
-  overflow-x: hidden;
 }
 
 /* =========================
-   MOBILE RESPONSIVE
+   MOBILE
    ========================= */
 @media (max-width: 768px) {
 
+  /* NAVBAR */
   .navbar {
     padding: 15px 20px;
   }
 
   .nav-menu {
-    display: flex;
-    flex-direction: row;     /* ✅ tetap horizontal */
+    flex-direction: row;
     gap: 16px;
-    overflow-x: auto;        /* ✅ bisa geser ke samping */
-    white-space: nowrap;     /* ✅ tidak turun baris */
-    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
   .nav-menu::-webkit-scrollbar {
-    display: none; /* optional: hide scrollbar */
+    display: none;
   }
 
-}
-
-
-  .nav-menu li {
-    width: 100%;
-  }
-
-  .nav-menu li a {
-    display: block;
-    width: 100%;
-    padding: 8px 0;
-  }
-
+  /* HERO */
   .hero {
     flex-direction: column-reverse;
     text-align: center;
-    padding: 20px;
-    min-height: auto;
+    padding: 30px 20px;
+    min-height: unset;   /* 🔥 FIX GAP HERO → ABOUT */
   }
 
   .hero h1 {
@@ -304,11 +250,6 @@ footer {
     font-size: 1.4rem;
   }
 
-  .hero p {
-    max-width: 100%;
-    font-size: 0.95rem;
-  }
-
   .hero-buttons {
     display: flex;
     flex-direction: column;
@@ -316,14 +257,12 @@ footer {
     align-items: center;
   }
 
-.hero-image img {
-  width: min(420px, 90%);
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 6px solid #eef2ff;
-}
+  .hero-image img {
+    width: 260px;
+    height: 260px;
+  }
 
+  /* ABOUT */
   .about {
     padding: 60px 20px;
     text-align: center;
@@ -333,6 +272,7 @@ footer {
     justify-content: center;
   }
 
+  /* PROJECTS */
   #projects {
     padding: 60px 20px;
   }
