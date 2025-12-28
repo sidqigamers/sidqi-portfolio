@@ -31,8 +31,7 @@ function Hero() {
             className="btn-outline"
             download
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             Download CV
           </a>
         </div>
