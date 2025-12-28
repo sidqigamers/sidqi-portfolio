@@ -1,7 +1,8 @@
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
-
 
 * {
   box-sizing: border-box;
@@ -172,6 +173,7 @@ nav {
 /* PROJECTS */
 #projects {
   padding: 80px 40px;
+  overflow-x: hidden;
 }
 
 .project-grid {
@@ -243,7 +245,8 @@ footer {
   }
 
   .nav-menu {
-    gap: 15px;
+    gap: 12px;
+    font-size: 0.9rem;
   }
 
   /* HERO */
