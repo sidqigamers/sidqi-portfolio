@@ -260,18 +260,24 @@ footer {
 @media (max-width: 768px) {
 
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 15px 20px;
   }
 
   .nav-menu {
-    width: 100%;
     display: flex;
-    flex-direction: column;   /* ⬅️ INI PENTING */
-    gap: 12px;
-    margin-top: 12px;
+    flex-direction: row;     /* ✅ tetap horizontal */
+    gap: 16px;
+    overflow-x: auto;        /* ✅ bisa geser ke samping */
+    white-space: nowrap;     /* ✅ tidak turun baris */
+    -webkit-overflow-scrolling: touch;
   }
+
+  .nav-menu::-webkit-scrollbar {
+    display: none; /* optional: hide scrollbar */
+  }
+
+}
+
 
   .nav-menu li {
     width: 100%;
