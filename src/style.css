@@ -15,10 +15,12 @@ html, body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f9f9f9;
   color: #222;
+  scroll-behavior: smooth;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* =========================
-   NAVBAR (DESKTOP & MOBILE SAME)
+   NAVBAR
 ========================= */
 .navbar {
   width: 100%;
@@ -30,7 +32,9 @@ html, body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.30);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+  gap: 16px;
 }
 
 .nav-logo {
@@ -45,6 +49,10 @@ html, body {
   gap: 28px;
   margin: 0;
   padding: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  scrollbar-width: none;
 }
 
 .nav-menu a {
@@ -52,6 +60,7 @@ html, body {
   color: #333;
   font-weight: 500;
   position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav-menu a::after {
@@ -151,6 +160,7 @@ html, body {
   background: #fff;
   padding: 80px 40px;
   box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+  transition: background 0.3s ease;
 }
 
 .skills {
@@ -167,6 +177,7 @@ html, body {
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* =========================
@@ -190,6 +201,7 @@ html, body {
   box-shadow: 0 12px 30px rgba(0,0,0,0.18);
   display: flex;
   flex-direction: column;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .project-image {
@@ -230,7 +242,7 @@ footer {
 }
 
 /* =========================
-   MOBILE (LAYOUT ONLY)
+   MOBILE
 ========================= */
 @media (max-width: 768px) {
 
@@ -242,6 +254,7 @@ footer {
     flex-direction: column-reverse;
     text-align: center;
     padding: 40px 20px;
+    min-height: auto;
   }
 
   .hero h1 {
@@ -277,4 +290,94 @@ footer {
   .skills {
     justify-content: center;
   }
+}
+
+/* =========================
+   DARK MODE
+========================= */
+body.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* NAVBAR */
+body.dark .navbar {
+  background: #111;
+}
+
+body.dark .nav-logo {
+  color: #9db7ff;
+}
+
+body.dark .nav-menu a {
+  color: #fff;
+}
+
+body.dark .nav-menu a::after {
+  background: #fff;
+}
+
+/* HERO */
+body.dark .hero h2 {
+  color: #cbd5f5;
+}
+
+/* ABOUT */
+body.dark .about {
+  background: #121212;
+}
+
+body.dark .skills li {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+/* PROJECTS */
+body.dark #projects {
+  background: #0f172a;
+}
+
+body.dark .project-card {
+  background: #111827;
+  color: #e5e7eb;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+body.dark .project-card p {
+  color: #cbd5f5;
+}
+
+body.dark .project-card small {
+  color: #94a3b8;
+}
+
+/* FOOTER */
+body.dark footer {
+  background: #020617;
+}
+
+.dark-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.dark-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.dark-toggle:hover .dark-icon {
+  transform: rotate(20deg);
+}
+
+body.dark .dark-icon {
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 4px;
 }
